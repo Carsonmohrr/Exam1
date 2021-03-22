@@ -1,0 +1,102 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	int sprayType;
+	int sprayNum;
+	double pps;
+	double tax;
+	double taxCost;
+	
+	tax = 0.0475;
+	
+	const double L1 = 8.99;
+	const double L2 = 8.75;
+	const double M1 = 7.99;
+	const double M2 = 7.50;
+	
+	cout << "** Welcome to the CPCC Disinfectant Shop ** \n\n";
+	cout << "\nChoose from one of the following types of Disinfectant Sprays: \n";
+	cout << "\t 1. LieSol \n";
+	cout << "\t 2. Microbond \n\n";
+	cout << "Which type of Disinfectant will be purchased? ";
+	cin >> sprayType;
+	
+	if(sprayType < 1 or sprayType > 2)
+	{
+		cout << "Invalid menu option selected. Program will end.";
+		return 0;
+	}
+	if(sprayType == 1)
+	
+		cout << "\nHow many LieSol Sprays will be purchased (min: 1)? ";
+	
+	else if(sprayType == 2)
+		
+		cout << "\nHow many Microbond Sprays will be purchased (min: 1)? ";
+		cin >> sprayNum;
+		
+	if(sprayNum < 1)
+	{
+		cout << "Invalid number of Sprays entered. Program will end.";
+		return 0;
+	}
+	
+	if(sprayType == 1 && sprayNum == 1 or 2)
+	{
+		cout << "\n\tSubtotal: $";
+		cout << L1 * sprayNum;
+		cout << "\n\tSales Tax: $";
+		cout << (L1 * sprayNum) * tax ;
+	}
+	
+	else if(sprayType == 1 && sprayNum >= 3)
+	{
+		cout << "\n\tSubtotal: $";
+		cout << L2 * sprayNum;
+		cout << "\n\tSales Tax: $";
+		cout << (L2 * sprayNum) * tax;
+	}
+	
+		else if(sprayType == 2 && sprayNum == 1 or 2)
+	{
+		cout << "\n\tSubtotal: $";
+		cout << M1 * sprayNum;
+		cout << "\n\tSales Tax: $";
+		cout << (M1 * sprayNum) * tax;
+	}
+	
+		else if(sprayType == 2 && sprayNum >= 3)
+	{
+		cout << "\n\tSubtotal: $";
+		cout << M2 * sprayNum;
+		cout << "\n\tSales Tax: $";
+		cout << (M2 * sprayNum) * tax;
+		
+	}
+		if(sprayType == 1 && sprayNum == 1 or 2)
+	{
+	cout << "\nThe total cost of this purchase $";
+	cout << (L1 * sprayNum) * tax + (L1 * sprayNum);	
+	}
+	
+	else if(sprayType == 1 && sprayNum >= 3)
+	{
+	cout << "\nThe total cost of this purchase $";
+	cout << (L2 * sprayNum) * tax + (L2 * sprayNum);	
+	}
+	
+		else if(sprayType == 2 && sprayNum == 1 or 2)
+	{
+	cout << "\nThe total cost of this purchase $";
+	cout << (M1 * sprayNum) * tax + (M1 * sprayNum);	
+	}
+	
+		else if(sprayType == 2 && sprayNum >= 3)
+	{
+	cout << "\nThe total cost of this purchase $";
+	cout << (M2 * sprayNum) * tax + (M2 * sprayNum);	
+	}
+}
